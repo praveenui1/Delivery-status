@@ -1,0 +1,30 @@
+.deliveries-container {
+    margin: 2em 0;
+}
+.heading {
+
+}
+.order-number {
+    font-size: 16px;
+    color: #29A9DF;
+}
+.sub-heading {
+    color: #29A9DF;
+    font-weight: bold;
+}
+.items-heading {
+    border-bottom: 1px solid #666;
+    padding-bottom: 0.5em;
+    font-size: 15px;
+}
+.items-container {
+    padding: 1em 0;
+}
+.delivery-container {
+    border: 1px solid #666666;
+    padding: 1em;
+    margin: 1em 0;
+}
+.mar-top-btm {
+    margin: 1em 0;
+}

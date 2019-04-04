@@ -1,0 +1,61 @@
+<div class="deliveries-container">
+  <div class="heading"><h5>Deliveries Summary</h5></div>
+  <div class="row delivery-container" *ngFor="let delivery of deliveries">
+    <div class="col-md-12 order-number"> Order ID : {{delivery.OrderNumber}}</div>
+    <div class="col-md-12">
+      <div class="row">
+          <div class="col-md-3">Quantity : {{delivery.OrderSummary.qty}}</div>
+          <div class="col-md-3">Weight : {{delivery.OrderSummary.weight}}</div>
+          <div class="col-md-3">Size : {{delivery.OrderSummary.size}}</div>
+          <div class="col-md-3">Amount : <span class="sub-heading">{{delivery.OrderSummary.amount}}</span></div>
+      </div>
+    </div>    
+    <div class="col-md-12">
+      <div class="row">
+        <div class="col-md-6 mar-top-btm">
+          <div class ="sub-heading">Shipping Details</div>
+          <div>{{delivery.ShipTo.name}}</div>
+          <div>{{delivery.ShipTo.street}}</div>
+          <div>{{delivery.ShipTo.state}} - {{delivery.ShipTo.zip}}</div>
+        </div>
+        <div class="col-md-6 mar-top-btm">
+            <div class="sub-heading">Billing Details</div>
+            <div>{{delivery.BillTo.name}}</div>
+            <div>{{delivery.BillTo.street}}</div>
+            <div>{{delivery.BillTo.state}} - {{delivery.BillTo.zip}}</div>
+          </div>
+      </div>
+      <div class="row">
+          <div class="col-md-6 mar-top-btm">
+            <div class ="sub-heading">Order Shippment Progress</div>
+            <div>Pending : {{delivery['Order Shippment Progress'].pending}}</div>
+            <div>Picked : {{delivery['Order Shippment Progress'].picked}}</div>
+            <div>Loaded : {{delivery['Order Shippment Progress'].loaded}}</div>
+          </div>
+          <div class="col-md-6 mar-top-btm">
+              <div class="sub-heading">Shipping Schedule</div>
+              <div>Delivery By : {{delivery.shipdates.shipBy}}</div>
+              <div>Don't Deliver Before : {{delivery.shipdates.doNotShipBefore}}</div>
+              <div>Deliver After : {{delivery.shipdates.shipAFter}}</div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-12 mar-top-btm">
+      <div class="row">
+        <div class="col-md-12 items-heading">Item Details</div>
+      </div>
+      <div class="row items-container">
+        <div class="col-md-3 sub-heading">Item</div>
+        <div class="col-md-3 sub-heading">Quantity</div>
+        <div class="col-md-3 sub-heading">Status</div>
+        <div class="col-md-3 sub-heading">Price</div>
+      </div>
+      <div *ngFor="let item of delivery.Items" class="row">
+          <div class="col-md-3">{{item.itemNo}}</div>
+          <div class="col-md-3">{{item.qty}}</div>
+          <div class="col-md-3">{{item.inventoryStatus}}</div>
+          <div class="col-md-3">${{item.price}}</div>
+        </div>
+    </div>
+  </div>
+</div>
